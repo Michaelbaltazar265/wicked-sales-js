@@ -1,4 +1,6 @@
 import React from 'react';
+import Header from './header';
+import ProductList from './product-list';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -18,8 +20,15 @@ export default class App extends React.Component {
   }
 
   render() {
-    return this.state.isLoading
-      ? <h1>Testing connections...</h1>
-      : <h1>{ this.state.message }</h1>;
+    return (
+      <>
+        <Header />
+        <div className="container col-sm-12">
+          <div className="row justify-content-center">
+            < ProductList />
+          </div>
+        </div>
+      </>
+    );
   }
 }
