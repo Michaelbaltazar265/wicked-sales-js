@@ -1,0 +1,29 @@
+.my-card { 
+    box-shadow: 2px 2px 4px #D3D3D3;
+    margin-bottom: 3rem;
+} 
+
+.my-card-img-top{ 
+    height: 20rem;
+    object-fit: contain;
+} 
+
+header{ 
+    background-color:	#303030;
+    padding: 1%;
+} 
+
+h2 { 
+    color: white;
+}  
+
+.product-detail { 
+    box-shadow: 2px 2px 4px rgb(65, 63, 63); 
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.click-1:hover { 
+    font-weight: bold;
+}
+ 
