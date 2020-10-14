@@ -111,8 +111,9 @@ app.post('/api/cart', (req, res, next) => {
           price: priceResult.rows[0].price
         };
         return cartIdAndPrice;
-      }
-      const insertCartSql = ` 
+
+      } // put this pack
+      const insertCartSql = `
       insert into "carts" ("cartId", "createdAt")
       values (default, default)
       returning "cartId"
@@ -120,6 +121,7 @@ app.post('/api/cart', (req, res, next) => {
       return db.query(insertCartSql)
         .then(cartIdResult => {
           const priceAndCartId = {
+
             cartId: cartIdResult.rows[0].cartId,
             price: priceResult.rows[0].price
           };
@@ -133,14 +135,14 @@ app.post('/api/cart', (req, res, next) => {
       const insertRowSQL = ` 
       insert into "cartItems" ("cartId", "productId", "price")
       values ($1, $2, $3)
-      returning "cartItemId"
+      returning "cartItemId" , "cartId", "productId", "price"
           `;
-      const params = [dataResult.cartId, dataResult.price, productId];
+      const params = [dataResult.cartId, productId, dataResult.price];
       return db.query(insertRowSQL, params)
         .then(insertResult => {
           return insertResult.rows[0].cartItemId;
         });
-    })
+    }) /// add this back
     .then(cartItemRes => {
       const cartItem = ` 
       select "c"."cartItemId",
@@ -159,6 +161,7 @@ where "c"."cartItemId" = $1
           res.status(201).json(data.rows[0]);
         });
     })
+
     .catch(err => next(err));
 
 });

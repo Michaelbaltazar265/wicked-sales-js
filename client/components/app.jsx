@@ -9,9 +9,14 @@ export default class App extends React.Component {
     this.state = {
       message: null,
       isLoading: true,
+      // view: { name: 'details', params: { productId: 1 } },
+      cart: [],
       view: { name: 'catalog', params: {} }
     };
     this.setView = this.setView.bind(this);
+    this.getCartItems = this.getCartItems.bind(this);
+    this.addToCart = this.addToCart.bind(this);
+
   }
 
   setView(name, params) {
@@ -29,6 +34,35 @@ export default class App extends React.Component {
       .then(data => this.setState({ message: data.message || data.error }))
       .catch(err => this.setState({ message: err.message }))
       .finally(() => this.setState({ isLoading: false }));
+    this.getCartItems();
+  }
+
+  getCartItems() {
+    fetch('/api/cart')
+      .then(res => res.json())
+      .then(data => {
+        this.setState({ cart: data });
+      })
+      .catch(err => console.error(err));
+  }
+
+  addToCart(product) {
+    const getPostReq = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(product)
+    };
+    fetch('/api/cart', getPostReq)
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          cart: this.state.cart.concat(data)
+        });
+      })
+      .catch(err => console.error(err));
+
   }
 
   render() {
@@ -37,13 +71,13 @@ export default class App extends React.Component {
     if (this.state.view.name === 'catalog') {
       renderProducts = < ProductList setView={this.setView} />;
     } else {
-      renderProducts = <ProductDetails viewParams={this.state.view.params} setView={this.setView} />;
+      renderProducts = <ProductDetails addToCart={this.addToCart} viewParams={this.state.view.params} setView={this.setView} />;
 
     }
 
     return (
       <>
-        <Header />
+        <Header cartItemCount={this.state.cart.length} />
         <div className="container col-sm-12">
           <div className="row justify-content-center">
             {renderProducts}
