@@ -25,5 +25,15 @@ h2 {
 
 .click-1:hover { 
     font-weight: bold;
+} 
+.items{ 
+    display: inline;
+    color: white;
+    padding-top: 2%;
+    padding-left: 67%;
+    font-size: 4vh;
+} 
+
+.card-text{ 
+    padding: 1vh;
 }
- 
