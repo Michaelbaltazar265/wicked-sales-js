@@ -28,7 +28,7 @@ class ProductDetails extends React.Component {
             </div>
             <div className="col-3 mt-5 p-2">
               <h3>{product.name}</h3>
-              <p className="price text-secondary">{`$${product.price}`}</p>
+              <p className="price text-secondary">{`$${product.price / 100}`}</p>
               <p className="card-text ">{product.shortDescription}</p>
               <button onClick={() => this.props.addToCart(this.state.product)} type="button" className="btn btn-primary">Add to Cart</button>
             </div>

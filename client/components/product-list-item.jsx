@@ -6,7 +6,7 @@ function ProductListItem(props) {
       <img className="my-card-img-top" src={props.products.image} alt="Image of product" />
       <div>
         <h5 className="my-card-title card-title">{props.products.name}</h5>
-        <p className="text-secondary">{`$${props.products.price}`}</p>
+        <p className="text-secondary">{`$${props.products.price / 100}`}</p>
         <p className="pb-5">{props.products.shortDescription}</p>
       </div>
     </div>
