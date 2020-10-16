@@ -2,7 +2,6 @@ import React from 'react';
 import Header from './header';
 import ProductList from './product-list';
 import ProductDetails from './product-details';
-// Do not add this add CarSummary
 import CartSummary from './cart-summary';
 
 export default class App extends React.Component {
