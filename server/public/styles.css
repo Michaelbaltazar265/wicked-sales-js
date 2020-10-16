@@ -1,6 +1,7 @@
 .my-card { 
-    box-shadow: 2px 2px 4px #D3D3D3;
+    box-shadow: 2px 2px 4px rgb(65, 63, 63); 
     margin-bottom: 3rem;
+
 } 
 
 .my-card-img-top{ 
@@ -36,4 +37,16 @@ h2 {
 
 .card-text{ 
     padding: 1vh;
+} 
+.img-cart { 
+    width: 250px;
+}
+
+.product-info { 
+    align-items: flex-start;
+}
+
+.footer{ 
+    font-weight: bold;
+    font-size: 150%;
 }
