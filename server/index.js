@@ -166,6 +166,25 @@ where "c"."cartItemId" = $1
 
 });
 
+app.post('/api/orders', (req, res, next) => {
+  if (!req.session.cartId) {
+    throw (new ClientError('CartId is not valid', 400));
+  }
+  if (!req.body.name || !req.body.creditCard || !req.body.shippingAddress) {
+    throw (new ClientError('Name, Credit Card and Shipping Address needs to be require', 400));
+  }
+  const sqlOrder = `
+  insert into "orders"("cartId", "name", "creditCard", "shippingAddress")
+  values($1, $2, $3, $4)
+  returning "orderId", "createdAt", "name", "creditCard", "shippingAddress";
+  `;
+  const params = [req.session.cartId, req.body.name, req.body.creditCard, req.body.shippingAddress];
+  db.query(sqlOrder, params)
+    .then(data => {
+      res.status(201).json(data.rows[0]);
+    });
+});
+
 app.use('/api', (req, res, next) => {
   next(new ClientError(`cannot ${req.method} ${req.originalUrl}`, 404));
 });
