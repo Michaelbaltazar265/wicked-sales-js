@@ -3,20 +3,6 @@ import React from 'react';
 function CartSummaryItem(items) {
 
   const item = items.item;
-  // eslint-disable-next-line no-console
-  // console.log(item.price);
-  const price = [];
-  price.push(item.price);
-  // console.log(price);
-
-  for (let i = 0; i < price.length; i++) {
-    const add = [];
-    add.push(price[i]);
-    // eslint-disable-next-line no-console
-    // console.log('adding ', add);
-
-  }
-
   return (
 
     <>

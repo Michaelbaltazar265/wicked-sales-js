@@ -15,7 +15,6 @@ function CartSummary(items) {
               return (
                 < CartSummaryItem item={item} key={item.cartItemId}/>
               );
-
             })
           }
         </div>
