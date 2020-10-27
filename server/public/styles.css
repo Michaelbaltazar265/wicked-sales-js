@@ -46,7 +46,15 @@ h2 {
     align-items: flex-start;
 }
 
-.footer{ 
+.item-total{ 
     font-weight: bold;
     font-size: 150%;
+}
+.checkout { 
+    margin-left: 42rem;
+    /* margin-left: 33rem; */
+} 
+
+.place-order { 
+    margin-left: 21rem;
 }

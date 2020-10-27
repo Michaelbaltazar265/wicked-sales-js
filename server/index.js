@@ -180,9 +180,18 @@ app.post('/api/orders', (req, res, next) => {
   `;
   const params = [req.session.cartId, req.body.name, req.body.creditCard, req.body.shippingAddress];
   db.query(sqlOrder, params)
+    .then(result => {
+      const order = result.rows[0];
+      if (order.cartId) {
+        delete req.session.cartId;
+        delete order.cartId;
+        return order;
+      }
+    })
     .then(data => {
       res.status(201).json(data.rows[0]);
-    });
+    })
+    .catch(err => next(err));
 });
 
 app.use('/api', (req, res, next) => {
