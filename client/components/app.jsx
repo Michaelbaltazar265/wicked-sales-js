@@ -12,7 +12,7 @@ export default class App extends React.Component {
       message: null,
       isLoading: true,
       cart: [],
-      view: { name: 'catalog', params: {} }
+      view: { name: 'modal', params: {} } // { name: 'catalog', params: {} }
     };
     this.setView = this.setView.bind(this);
     this.getCartItems = this.getCartItems.bind(this);
@@ -96,6 +96,17 @@ export default class App extends React.Component {
       renderProducts = < CartSummary items={this.state.cart} setView={this.setView} handleClick={this.setView}/>;
     } else if (this.state.view.name === 'checkout') {
       renderProducts = < CheckoutForm items={this.state.cart} setView={this.setView} />;
+    } else if (this.state.view.name === 'modal') {
+      return (
+        <>
+          <div className='modal-container'>
+            <h1 className='text-center'>Disclaimer</h1>
+            <p className='text-center'> This site is intended for demonstration purposes only. No purchases can be made on this site.</p>
+            <p className='text-center'> Please click enter to proceed </p>
+            <button type="button" className=" text-center btn btn-danger" onClick = {() => this.setView('catalog', {})}>Enter</button>
+          </div>
+        </>
+      );
     } else {
       renderProducts = <ProductDetails addToCart={this.addToCart} viewParams={this.state.view.params} setView={this.setView} />;
 
