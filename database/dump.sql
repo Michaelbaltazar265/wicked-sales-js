@@ -363,6 +363,13 @@ COPY public."cartItems" ("cartItemId", "cartId", "productId", price) FROM stdin;
 135	48	5	9900
 136	48	6	830
 137	48	4	999
+138	49	3	2900
+139	49	5	9900
+140	49	2	2595
+141	49	1	2999
+142	49	5	9900
+143	50	2	2595
+144	50	2	2595
 \.
 
 
@@ -419,6 +426,8 @@ COPY public.carts ("cartId", "createdAt") FROM stdin;
 46	2020-10-22 21:19:09.501081+00
 47	2020-10-23 18:27:36.79376+00
 48	2020-10-25 00:38:25.942493+00
+49	2020-10-26 18:29:29.498372+00
+50	2020-10-27 18:09:26.86107+00
 \.
 
 
@@ -443,12 +452,12 @@ COPY public.orders ("orderId", "cartId", name, "creditCard", "shippingAddress", 
 --
 
 COPY public.products ("productId", name, price, image, "shortDescription", "longDescription") FROM stdin;
-1	Shake Weight	2999	/images/shake-weight.jpg	Dynamic Inertia technology ignites muscles in arms, shoulders, and chest.	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock.\\nAesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
-2	ShamWow	2595	/images/shamwow.jpg	It's like a chamois, towel, and sponge, all in one! Soaks up to 10x it's weight in any liquid!	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock.\\nAesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
-3	Snuggie	2900	/images/snuggie.jpg	Super-Soft Fleece with pockets! One Size fits all Adults! Keeps you Warm & Your Hands-Free!	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock.\\nAesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
-4	Wax Vac	999	/images/wax-vac.jpg	Gentle way to remove ear wax. Safe and hygienic. Reduces the risk of painful infections.	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock.\\nAesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
-5	Ostrich Pillow	9900	/images/ostrich-pillow.jpg	Create your own snugly space in the world and feel-good anywhere with the ultimate cocoon pillow.	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock.\\nAesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
-6	Tater Mitts	830	/images/tater-mitts.jpg	8 Seconds is all you need with Tater Mitts. Quickly and easily prepare all your favorite potato dishes with Tater Mitts.	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock.\\nAesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
+1	Puppy Starter Kit Chew Dog Toys - 3Pack 	2999	/images/puppy-starter-kit.jpeg	 Start your puppy out with healthy, approved chewing habits right from the beginning. Three different Nylabones are designed for different stages of your puppy's development.	Start your puppy out with healthy, approved chewing habits right from the beginning. Three different Nylabones are designed for different stages of your puppy's development. As a new puppy parent, part of your job is to encourage healthy chewing behaviors and to help your puppy learn which items can and cannot be chewed. This Nylabone Puppy Starter Kit offers three different Nylabones designed to complement varying stages of your puppy's development. Included are: one Puppy Bone, a more flexible, pliable bone designed to assist in the development of teeth and jaws in puppies 2 months and over; one Healthy Edibles Bacon Bone, a natural flavored edible chew that's an ideal alternative to processed rawhide or animal parts. Contains no salt, sugar or plastic and it's 100% edible and digestible. Healthy Edibles should be offered from 3 months on; and, one Durable Pooch Pacifier in Chicken flavor. This chew is designed for puppies 4 months and older, whose jaws are getting stronger and their chewing more aggressive. Each of these bones is non-toxic, vet-approved and measures 4.75"L.
+3	Puppy Goodie Bone™ Treat Dispensing Puppy	2900	/images/puppy-goodie-bone.jpeg	The natural KONG Puppy soft teething rubber formula designed to soothe teeth and gums.	The KONG Puppy Goodie Bone engages puppies that are learning appropriate chewing behavior. Made from the KONG Classic unique puppy rubber, this bone fulfills instinctual needs to chew while easing aching teeth and gums. KONG Goodie Grippers turn this entertaining toy into a fun treat dispensing challenge. Want to extend chew sessions? Stuff with KONG Puppy Snacks and KONG Puppy Easy Treat. Covered by KONG Satisfaction Guarantee. See KONG Satisfaction Guarantee document below for full details.
+4	Puppy Chew Dental Dog Bone	999	/images/puppy-chew-dental-dog-bone.jpeg	The Nylabone Puppy Dental Bones are made of softer materials for puppies.	Developing proper chewing habits is one of the best lessons your young pup can learn. Start them down the right path now with a chew they\\"ll love! The Nylabone Puppy Dental Bones are made of softer materials for puppies. They help puppies develop proper chewing habits, grow strong teeth and jaws.
+6	Top Paw® Noodle Bobo Puppy Dog Toy - Plush, Squeaker	830	/images/noodle-bobo-puppy-dog-toy.jpeg	Keep your dog fully entertained at play time with this Top Paw Bobo Dog Toy.	It\\"s easy to see why the Loofa Dog has become such a big hit with canines everywhere: it\\"s great for fetching, tossing, and shaking! Each Loofa Dog Plush Toy includes an internal squeaker that amps up any game. You choose one of four sizes, and it ships in one of five colors at random. 
+2	Puppy X Bone Dog Toy	2595	/images/puppy-x-bone-dog-toy.jpeg	Provide an easy-chewing, comfort-hold puppy chew toy that your little guy	Provide an easy-chewing, comfort-hold puppy chew toy that your little guy will enjoy sinking his teeth into with Nylabone/s Puppy Chew X Bone. Featuring a delicious beef flavor throughout, this chew toy comes with ridges and nubs that will help clean your pup/s teeth and massage gums.
+5	Smart Pet Love Snuggle Puppy™ Behavioral Aid Dog Toy	9900	/images/smart-pet-love-snuggle-puppy.jpeg	Keep your dog fully entertained at play time with this Top Paw Bobo Dog Toy.	 Whether they\\"re new to the family, or perhaps just going through a tough time, the Smart Pet Love Snuggle Puppy is designed to provide comfort and helps relieve anxiety in your four-legged friend. Whatever the case, whether crate training, a new transition, fireworks, or perhaps a thunderstorm, rest assured the Snuggle Puppy will be there to help. Dogs and puppies are pack animals who are instinctively drawn to their mother and others in their pack. The Snuggle Puppy recreates the intimacy and physical warmth and a "\\real-feel\\" heartbeat. The result is a calmer, more peaceful pet- one that feels less loneliness, fear, and separation anxiety.\nThe "real-feel" pulsing heartbeat comes with 2 AAA batteries that last up to 2 weeks with continuous 24/7 use. The hearts on/off button allows for use when needed. Included with your Snuggle Puppy is one disposable warmer pack (non-toxic, safe for people and pets, each pack lasts 24 hours) for an extra source of comfort for your pet. The Snuggle Puppy is all natural, medication free, and not a restraint. It calms your pet by appealing to their basic natural instincts. It is also machine washable on a gentle cycle (make sure to remove the heartbeat prior to washing). 
 \.
 
 
@@ -456,14 +465,14 @@ COPY public.products ("productId", name, price, image, "shortDescription", "long
 -- Name: cartItems_cartItemId_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."cartItems_cartItemId_seq"', 137, true);
+SELECT pg_catalog.setval('public."cartItems_cartItemId_seq"', 144, true);
 
 
 --
 -- Name: carts_cartId_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."carts_cartId_seq"', 48, true);
+SELECT pg_catalog.setval('public."carts_cartId_seq"', 50, true);
 
 
 --
