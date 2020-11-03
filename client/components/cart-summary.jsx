@@ -7,9 +7,8 @@ function CartSummary(items) {
     total += items.items[i].price;
   }
   const totalProduct = total / 100;
-  // setView('checkout', {})
 
-  if (items) {
+  if (items.items.length > 0) {
     return (
       <>
         <h1>My Cart</h1>

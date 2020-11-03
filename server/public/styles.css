@@ -3,6 +3,35 @@
     margin-bottom: 3rem;
 
 } 
+/* Logo css */
+.header{ 
+    background-color: #00BFFF;
+} 
+/* Logo css */
+.logo{ 
+    border: 1px;
+    border-radius: 4px;
+    width: 130px;
+}
+/* logo hover */
+.logo:hover { 
+    transform: scale(.5);
+}
+
+/* parallax image */
+.parallax{ 
+    background: url('./images/fetch.jpg');
+    height: 700px;
+    width: 1050px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+}
 
 .my-card-img-top{ 
     height: 20rem;
@@ -61,4 +90,8 @@ h2 {
 
 .btn-danger{ 
     margin-left: 30rem;
+} 
+.disclaimer { 
+    padding: .5rem;
+    color: red;
 }

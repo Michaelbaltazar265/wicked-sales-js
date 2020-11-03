@@ -12,7 +12,7 @@ export default class App extends React.Component {
       message: null,
       isLoading: true,
       cart: [],
-      view: { name: 'modal', params: {} } // { name: 'catalog', params: {} }
+      view: { name: 'modal', params: {} } // { name: 'modal', params: {} }
     };
     this.setView = this.setView.bind(this);
     this.getCartItems = this.getCartItems.bind(this);
@@ -92,6 +92,18 @@ export default class App extends React.Component {
 
     if (this.state.view.name === 'catalog') {
       renderProducts = < ProductList setView={this.setView} />;
+      return (
+        <>
+          <Header cartItemCount={this.state.cart.length} setView={this.setView} />
+          <div className='parallax'></div>
+          <div className=" container col-sm-12 ">
+            <h3 className='text-center'>Product Line </h3>
+            <div className=" row justify-content-center ">
+              {renderProducts}
+            </div>
+          </div>
+        </>
+      );
     } else if (this.state.view.name === 'cart') {
       renderProducts = < CartSummary items={this.state.cart} setView={this.setView} handleClick={this.setView}/>;
     } else if (this.state.view.name === 'checkout') {
@@ -99,6 +111,7 @@ export default class App extends React.Component {
     } else if (this.state.view.name === 'modal') {
       return (
         <>
+          <Header cartItemCount={this.state.cart.length} setView={this.setView} />
           <div className='modal-container'>
             <h1 className='text-center'>Disclaimer</h1>
             <p className='text-center'> This site is intended for demonstration purposes only. No purchases can be made on this site.</p>
