@@ -1,8 +1,15 @@
 .my-card { 
     box-shadow: 2px 2px 4px rgb(65, 63, 63); 
     margin-bottom: 3rem;
+    transition: transform .2s;
+    transition: ;
 
 } 
+
+.my-card:hover { 
+    transform: scale(1.03);
+}
+
 /* Logo css */
 .header{ 
     background-color: #00BFFF;

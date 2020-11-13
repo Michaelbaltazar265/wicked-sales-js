@@ -21,7 +21,9 @@ class ProductDetails extends React.Component {
     if (product) {
       return (
         <div className="container">
-          <div className="click-1 mt-1" onClick={() => this.props.setView('catalog', {})}> {' < Back to catalog '} </div>
+          <div className='col-3'>
+            <div className="click-1 mt-1" onClick={() => this.props.setView('catalog', {})}> {' < Back to catalog '} </div>
+          </div>
           <div className="row product-detail">
             <div className="col-5">
               <img className="my-card-img-top card-img-top" src={product.image} alt="Image of product" />

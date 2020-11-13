@@ -11,10 +11,15 @@ function CartSummary(items) {
   if (items.items.length > 0) {
     return (
       <>
-        <h1>My Cart</h1>
-
         <div className='container'>
-          <div className="click-1 mt-1" onClick={() => items.setView('catalog', {})}> {' < Back to catalog '} </div>
+          <div className='row'>
+            <div className='col-12 text-center'>
+              <h1>My Cart</h1>
+            </div>
+            <div className='col-3'>
+              <div className="click-1 mt-1" onClick={() => items.setView('catalog', {})}> {' < Back to catalog '} </div>
+            </div>
+          </div>
           {
             items.items.map(item => {
               return (
@@ -23,11 +28,13 @@ function CartSummary(items) {
             })
           }
         </div>
-        <div className='footer col-md-12 col-10 my-3 d-flex justify-content-between align-items-center'>
+        <div className='footer '>
           <div className='container '>
             <div className='row'>
-              <p className='mt-3 item-total' >Item Total { `$${totalProduct}`} </p>
-              <button onClick={() => items.setView('checkout', {})} type="button" className="btn btn-success checkout">Checkout</button>
+              <div className='d-flex justify-content-between align-items-center'>
+                <p className='mt-3 item-total' >Items Total { `$${totalProduct}`} </p>
+                <button onClick={() => items.setView('checkout', {})} type="button" className="btn btn-success checkout">Checkout</button>
+              </div>
             </div>
           </div>
         </div>
