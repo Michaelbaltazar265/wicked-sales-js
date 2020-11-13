@@ -87,8 +87,7 @@ h2 {
     font-size: 150%;
 }
 .checkout { 
-    margin-left: 42rem;
-    /* margin-left: 33rem; */
+    margin-left: 1rem;
 } 
 
 .place-order { 
@@ -98,4 +97,41 @@ h2 {
 .disclaimer { 
     padding: .5rem;
     color: red;
+} 
+
+
+/* The media queries below will automatically adjust the set width of the
+container class depending on the size of the current browser window. Notice
+how the containers get smaller as the size of the screen gets smaller. Without
+media queries, building responsive designs is almost impossible, as it is important
+for the content of the website to adapt to the screen it is displayed on. */
+
+@media only screen and (max-width: 1250px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        max-width: 575px;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .container {
+        max-width: 500px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .container {
+        max-width: 420px;
+    }
 }
