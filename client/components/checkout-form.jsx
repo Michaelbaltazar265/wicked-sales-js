@@ -36,14 +36,18 @@ class CheckoutFrom extends React.Component {
       return (
         <>
           <div className='container'>
-            <div className='row col-10 flex-column'>
-              <h3 className='text-center disclaimer'>Disclaimer</h3>
-              <h4 className='text-center'> please do not put sensitive information in the input as this is for demonstration purposes only</h4>
+            <div className='row'>
+              <div className='col-12 flex-column text-center'>
+                <h3 className='disclaimer'>Disclaimer</h3>
+                <h4> Please do not put sensitive information in the input as this is for demonstration purposes only</h4>
+              </div>
             </div>
           </div>
           <div className='container'>
             <div className='row mt-3 pl-8'>
-              <h1>Checkout</h1>
+              <div className='col-3'>
+                <h1>Checkout</h1>
+              </div>
               <div className='col-10 flex-column mt-3'>
                 <h4 className='price text-secondary'>{`Order Total: $${this.calcItems()}`}</h4>
               </div>

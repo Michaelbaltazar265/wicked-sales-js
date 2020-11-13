@@ -12,7 +12,7 @@ export default class App extends React.Component {
       message: null,
       isLoading: true,
       cart: [],
-      view: { name: 'modal', params: {} } // { name: 'modal', params: {} }
+      view: { name: 'checkout', params: {} } // { name: 'modal', modal: {} }
     };
     this.setView = this.setView.bind(this);
     this.getCartItems = this.getCartItems.bind(this);
