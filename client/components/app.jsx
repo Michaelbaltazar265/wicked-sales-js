@@ -112,11 +112,21 @@ export default class App extends React.Component {
       return (
         <>
           <Header cartItemCount={this.state.cart.length} setView={this.setView} />
-          <div className='modal-container'>
-            <h1 className='text-center'>Disclaimer</h1>
-            <p className='text-center'> This site is intended for demonstration purposes only. No purchases can be made on this site.</p>
-            <p className='text-center'> Please click enter to proceed </p>
-            <button type="button" className=" text-center btn btn-danger" onClick = {() => this.setView('catalog', {})}>Enter</button>
+          <div className='container'>
+            <div className='row'>
+              <div className='col-12'>
+                <h1 className='text-center'>Disclaimer</h1>
+              </div>
+              <div className='col-12' >
+                <p className='text-center'> This site is intended for demonstration purposes only. No purchases can be made on this site.</p>
+              </div>
+              <div className='col-12'>
+                <p className='text-center'> Please click enter to proceed </p>
+              </div>
+              <div className='col text-center'>
+                <button type="button" className='text-center btn btn-danger' onClick = {() => this.setView('catalog', {})}>Enter</button>
+              </div>
+            </div>
           </div>
         </>
       );
