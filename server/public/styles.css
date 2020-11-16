@@ -2,10 +2,11 @@
     box-shadow: 2px 2px 4px rgb(65, 63, 63); 
     margin-bottom: 3rem;
     transition: transform .2s;
-    transition: ;
-
 } 
 
+.card { 
+    width: 20rem;
+}
 .my-card:hover { 
     transform: scale(1.03);
 }
@@ -98,6 +99,12 @@ h2 {
     padding: .5rem;
     color: red;
 } 
+.image-div { 
+    width: auto;
+    height: 550px;
+    align-items: center;
+    justify-content: center;
+}
 
 
 /* The media queries below will automatically adjust the set width of the
@@ -106,32 +113,9 @@ how the containers get smaller as the size of the screen gets smaller. Without
 media queries, building responsive designs is almost impossible, as it is important
 for the content of the website to adapt to the screen it is displayed on. */
 
-@media only screen and (max-width: 1250px) {
-    .container {
-        max-width: 960px;
-    }
-}
-
-@media only screen and (max-width: 992px) {
-    .container {
-        max-width: 720px;
-    }
-}
-
 @media only screen and (max-width: 768px) {
     .container {
         max-width: 575px;
     }
 }
 
-@media only screen and (max-width: 576px) {
-    .container {
-        max-width: 500px;
-    }
-}
-
-@media only screen and (max-width: 500px) {
-    .container {
-        max-width: 420px;
-    }
-}
