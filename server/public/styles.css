@@ -4,6 +4,9 @@
     transition: transform .2s;
     cursor: pointer;
 } 
+body { 
+    overflow-x: hidden;
+}
 
 .card { 
     width: 20rem;

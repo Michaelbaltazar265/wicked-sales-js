@@ -167,31 +167,33 @@ where "c"."cartItemId" = $1
 });
 
 app.post('/api/orders', (req, res, next) => {
-  if (!req.session.cartId) {
+  const cartId = req.session.cartId;
+  const { name, creditCard, shippingAddress } = req.body;
+  if (!cartId) {
     throw (new ClientError('CartId is not valid', 400));
-  }
-  if (!req.body.name || !req.body.creditCard || !req.body.shippingAddress) {
+  } else if (!name || !creditCard || !shippingAddress) {
     throw (new ClientError('Name, Credit Card and Shipping Address needs to be require', 400));
-  }
-  const sqlOrder = `
-  insert into "orders"("cartId", "name", "creditCard", "shippingAddress")
+  } else {
+    const sqlOrder = `
+  insert into "orders" ("cartId", "name", "creditCard", "shippingAddress")
   values($1, $2, $3, $4)
-  returning "orderId", "createdAt", "name", "creditCard", "shippingAddress";
+  returning *
   `;
-  const params = [req.session.cartId, req.body.name, req.body.creditCard, req.body.shippingAddress];
-  db.query(sqlOrder, params)
-    .then(result => {
-      const order = result.rows[0];
-      if (order.cartId) {
-        delete req.session.cartId;
-        delete order.cartId;
-        return order;
-      }
-    })
-    .then(data => {
-      res.status(201).json(data.rows[0]);
-    })
-    .catch(err => next(err));
+    const params = [cartId, name, creditCard, shippingAddress];
+    db.query(sqlOrder, params)
+      .then(result => {
+        const order = result.rows[0];
+        if (order.cartId) {
+          delete req.session.cartId;
+          delete order.cartId;
+          return order;
+        }
+      })
+      .then(data => {
+        res.status(200).json(data);
+      })
+      .catch(err => next(err));
+  }
 });
 
 app.use('/api', (req, res, next) => {
