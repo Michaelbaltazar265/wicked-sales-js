@@ -5,8 +5,8 @@ function Header(props) {
     <header className="header">
       <div className='container'>
         <div className='row row align-items-center'>
-          <img src="/images/logo.png" alt="" className="ml-4 mb-0 logo" onClick={() => props.setView('catalog', {})}/>
-          <p className="items click-1" onClick={() => props.setView('cart', {})} >{`${props.cartItemCount} items`}<i className="fas fa-cart-plus"></i></p>
+          <img src="/images/logo.png" alt="" className="ml-4 mb-0 logo pointer" onClick={() => props.setView('catalog', {})}/>
+          <p className="items click-1 pointer" onClick={() => props.setView('cart', {})} >{`${props.cartItemCount} items`}<i className="fas fa-cart-plus"></i></p>
         </div>
       </div>
     </header>
