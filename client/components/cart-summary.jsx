@@ -20,13 +20,17 @@ function CartSummary(items) {
               <div className="click-1 mt-1 pointer " onClick={() => items.setView('catalog', {})}> {' < Back to catalog '} </div>
             </div>
           </div>
-          {
-            items.items.map(item => {
-              return (
-                < CartSummaryItem item={item} key={item.cartItemId}/>
-              );
-            })
-          }
+          <div className='row'>
+            <div className='col'>
+              {
+                items.items.map(item => {
+                  return (
+                    < CartSummaryItem item={item} key={item.cartItemId}/>
+                  );
+                })
+              }
+            </div>
+          </div>
         </div>
         <div className='footer '>
           <div className='container '>

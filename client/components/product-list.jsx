@@ -17,7 +17,6 @@ class ProductList extends React.Component {
   getProducts() {
     fetch('./api/products')
       .then(res => res.json())
-      // eslint-disable-next-line no-console
       .then(data => {
         this.setState({ products: data });
       });
