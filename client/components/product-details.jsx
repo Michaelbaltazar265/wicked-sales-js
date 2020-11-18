@@ -22,7 +22,7 @@ class ProductDetails extends React.Component {
       return (
         <div className="container">
           <div className='col-3'>
-            <div className="click-1 mt-1" onClick={() => this.props.setView('catalog', {})}> {' < Back to catalog '} </div>
+            <div className="click-1 mt-1 pointer" onClick={() => this.props.setView('catalog', {})}> {' < Back to catalog '} </div>
           </div>
           <div className="row product-detail">
             <div className="col-5">
@@ -32,7 +32,7 @@ class ProductDetails extends React.Component {
               <h3>{product.name}</h3>
               <p className="price text-secondary">{`$${product.price / 100}`}</p>
               <p className="card-text ">{product.shortDescription}</p>
-              <button onClick={() => this.props.addToCart(this.state.product)} type="button" className="btn btn-primary">Add to Cart</button>
+              <button onClick={() => this.props.addToCart(this.state.product)} type="button" className="btn btn-primary pointer">Add to Cart</button>
             </div>
             <div className="row">
               <p className="paragraph-spacing"> {product.longDescription} </p>

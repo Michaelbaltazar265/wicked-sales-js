@@ -66,8 +66,8 @@ class CheckoutFrom extends React.Component {
                     <textarea className="form-control" name='shippingAddress' id="shippingAddress" rows="3" placeholder='Shipping Address' onChange={this.handleChange} value={this.state.shippingAddress}></textarea>
                   </div>
                   <div className='form-group mt-3 d-flex'>
-                    <p className='click-1' onClick={() => this.props.setView('catalog', {})}> {' < Continue Shipping '} </p>
-                    <button type="submit" className="btn btn-success place-order">Place Order</button>
+                    <p className='click-1 pointer' onClick={() => this.props.setView('catalog', {})}> {' < Continue Shipping '} </p>
+                    <button type="submit" className="btn btn-success place-order pointer">Place Order</button>
                   </div>
                 </form>
               </div>

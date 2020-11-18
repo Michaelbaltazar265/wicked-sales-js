@@ -124,7 +124,7 @@ export default class App extends React.Component {
                 <p className='text-center'> Please click enter to proceed </p>
               </div>
               <div className='col text-center'>
-                <button type="button" className='text-center btn btn-danger' onClick = {() => this.setView('catalog', {})}>Enter</button>
+                <button type="button" className='text-center btn btn-danger pointer' onClick = {() => this.setView('catalog', {})}>Enter</button>
               </div>
             </div>
           </div>
