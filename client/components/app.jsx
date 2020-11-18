@@ -107,7 +107,7 @@ export default class App extends React.Component {
     } else if (this.state.view.name === 'cart') {
       renderProducts = < CartSummary items={this.state.cart} setView={this.setView} handleClick={this.setView}/>;
     } else if (this.state.view.name === 'checkout') {
-      renderProducts = < CheckoutForm items={this.state.cart} setView={this.setView} />;
+      renderProducts = < CheckoutForm items={this.state.cart} setView={this.setView} placeOrder={this.placeOrder} />;
     } else if (this.state.view.name === 'modal') {
       return (
         <>

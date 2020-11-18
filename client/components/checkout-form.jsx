@@ -10,6 +10,7 @@ class CheckoutFrom extends React.Component {
       shippingAddress: ''
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   calcItems() {
@@ -29,6 +30,13 @@ class CheckoutFrom extends React.Component {
     this.setState({
       [name]: value
     });
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    if (this.state.name && this.state.creditCard && this.state.shippingAddress) {
+      this.props.placeOrder(this.state);
+    }
   }
 
   render() {
@@ -52,18 +60,18 @@ class CheckoutFrom extends React.Component {
                 <h4 className='price text-secondary'>{`Order Total: $${this.calcItems()}`}</h4>
               </div>
               <div className='col-10 form'>
-                <form className='col-10'>
+                <form className='col-10' onSubmit={this.handleSubmit}>
                   <div className='form-group mt-3'>
                     <label htmlFor="name"> Name</label>
-                    <input type="text" className="form-control" id='name' name='name' placeholder='Full Name' onChange={this.handleChange} value={this.state.name}/>
+                    <input type="text" className="form-control" id='name' name='name' placeholder='Full Name' onChange={this.handleChange} value={this.state.name} required/>
                   </div>
                   <div className='form-group mt-3'>
                     <label htmlFor="creditCard">Credit Card</label>
-                    <input type="number" className="form-control" id='creditCard' name='creditCard' placeholder='Credit Card Number' onChange={this.handleChange} value={this.state.creditCard} />
+                    <input type="number" className="form-control" id='creditCard' name='creditCard' placeholder='Credit Card Number' onChange={this.handleChange} value={this.state.creditCard} required />
                   </div>
                   <div className="form-group mt-3">
                     <label htmlFor="shippingAddress">Shipping Address</label>
-                    <textarea className="form-control" name='shippingAddress' id="shippingAddress" rows="3" placeholder='Shipping Address' onChange={this.handleChange} value={this.state.shippingAddress}></textarea>
+                    <textarea className="form-control" name='shippingAddress' id="shippingAddress" rows="3" placeholder='Shipping Address' onChange={this.handleChange} value={this.state.shippingAddress} required></textarea>
                   </div>
                   <div className='form-group mt-3 d-flex'>
                     <p className='click-1 pointer' onClick={() => this.props.setView('catalog', {})}> {' < Continue Shipping '} </p>
