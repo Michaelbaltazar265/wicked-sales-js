@@ -20,8 +20,8 @@ class CheckoutFrom extends React.Component {
       total += items[i].price;
     }
     const totalItems = total / 100;
-    const priceProduct = totalItems.toFixed(2);
-    return priceProduct;
+    const price = totalItems.toFixed(2);
+    return price;
   }
 
   handleChange(event) {
