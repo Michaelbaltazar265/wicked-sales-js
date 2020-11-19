@@ -36,7 +36,7 @@ function CartSummary(items) {
           <div className='container '>
             <div className='row'>
               <div className=' col-12 d-flex justify-content-between align-items-center checkout'>
-                <p className='mt-3 item-total' >Items Total { `$${totalProduct}`} </p>
+                <p className='mt-3 item-total' >Items Total { `$${totalProduct.toFixed(2)}`} </p>
                 <button onClick={() => items.setView('checkout', {})} type="button" className="btn btn-success pointer ">Checkout</button>
               </div>
             </div>
