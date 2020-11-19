@@ -28,7 +28,7 @@ body {
 }
 
 /* parallax image */
-.parallax{ 
+.parallax { 
     background: url('./images/fetch.jpg');
     height: 700px;
     width: 1050px;
@@ -119,6 +119,10 @@ for the content of the website to adapt to the screen it is displayed on. */
         max-width: 575px;
     } 
     .image-div { 
+        width: auto; 
+        height: auto;
+    } 
+    .parallax { 
         width: auto; 
         height: auto;
     }
