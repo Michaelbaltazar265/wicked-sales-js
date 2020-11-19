@@ -3,6 +3,7 @@ import React from 'react';
 function CartSummaryItem(items) {
 
   const item = items.item;
+  const priceProduct = item.price / 100;
   return (
 
     <>
@@ -12,7 +13,7 @@ function CartSummaryItem(items) {
         </div>
         <div className=" d-flex flex-column product-info col p-4 align-items-center">
           <h3 className='name p-5'> {item.name} </h3>
-          <h4 className='price text-secondary'>{`$${item.price / 100}`}</h4>
+          <h4 className='price text-secondary'>{`$${priceProduct.toFixed(2)}`}</h4>
           <p className="short-des">{item.shortDescription}</p>
         </div>
       </div>

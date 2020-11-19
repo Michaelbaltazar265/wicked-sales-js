@@ -1,6 +1,7 @@
 import React from 'react';
 
 function ProductListItem(props) {
+  const priceProduct = props.products.price / 100;
   return (
 
     <div className="card mr-md-5 click my-card" onClick={() => props.setView('details', { productId: props.products.productId })} >
@@ -9,7 +10,7 @@ function ProductListItem(props) {
       </div>
       <div className='card-body'>
         <h5 className="card-title">{props.products.name}</h5>
-        <p className="text-secondary">{`$${props.products.price / 100}`}</p>
+        <p className="text-secondary">{`$${priceProduct.toFixed(2)}`}</p>
         <p className="pb-5">{props.products.shortDescription}</p>
       </div>
     </div>
