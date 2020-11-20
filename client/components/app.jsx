@@ -134,11 +134,11 @@ export default class App extends React.Component {
       renderProducts = <ProductDetails addToCart={this.addToCart} viewParams={this.state.view.params} setView={this.setView} />;
 
     }
-
+    // col-sm-12
     return (
       <>
         <Header cartItemCount={this.state.cart.length} setView={this.setView} />
-        <div className=" container col-sm-12 ">
+        <div className=" container col-12 ">
           <div className=" row justify-content-center ">
             {renderProducts}
           </div>

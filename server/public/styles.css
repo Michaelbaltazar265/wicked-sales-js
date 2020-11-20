@@ -3,9 +3,19 @@
     margin-bottom: 3rem;
     transition: transform .2s;
     cursor: pointer;
+    overflow-x: hidden;
 } 
 body { 
     overflow-x: hidden;
+}
+
+.header-row , body { 
+    display: flex;
+display: -webkit-flex;
+justify-content: center;
+-webkit-justify-content: center;
+align-items: center;
+-webkit-align-items: center;
 }
 
 .card { 
@@ -90,9 +100,9 @@ h2 {
     margin-left: 1rem;
 } 
 
-.place-order { 
+/* .place-order { 
     margin-left: 21rem;
-}
+} */
 
 .disclaimer { 
     padding: .5rem;
@@ -116,23 +126,18 @@ for the content of the website to adapt to the screen it is displayed on. */
 
 @media only screen and (max-width: 768px) {
     .container {
-        max-width: 575px;
+        max-width: 675px; 
+        /* max-width: 675px; */
+        justify-content: center;
+        align-items: center;
     } 
-    .image-div { 
-        width: auto; 
-        height: auto;
-    } 
-    .parallax { 
-        width: auto; 
-        height: auto;
+    img { 
+        justify-content: center;
+        align-items: center;
     }
+  
+    .parallax { 
+        display: none;
+    } 
 }
 
-.header-row { 
-    display: flex;
-display: -webkit-flex;
-justify-content: center;
--webkit-justify-content: center;
-align-items: center;
--webkit-align-items: center;
-}

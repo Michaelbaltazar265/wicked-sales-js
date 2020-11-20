@@ -73,9 +73,9 @@ class CheckoutFrom extends React.Component {
                     <label htmlFor="shippingAddress">Shipping Address</label>
                     <textarea className="form-control" name='shippingAddress' id="shippingAddress" rows="3" placeholder='Shipping Address' onChange={this.handleChange} value={this.state.shippingAddress} required></textarea>
                   </div>
-                  <div className='form-group mt-3 d-flex'>
+                  <div className='form-group mt-3 d-flex justify-content-between align-items-center'>
                     <p className='click-1 pointer' onClick={() => this.props.setView('catalog', {})}> {' < Continue Shipping '} </p>
-                    <button type="submit" className="btn btn-success place-order pointer">Place Order</button>
+                    <button type="submit" className="btn btn-success p-2 pointer">Place Order</button>
                   </div>
                 </form>
               </div>
