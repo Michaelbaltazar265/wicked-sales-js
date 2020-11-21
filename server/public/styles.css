@@ -117,6 +117,10 @@ h2 {
 
 .pointer {cursor: pointer;}
 
+.paragraph-spacing { 
+    padding: 1rem;
+}
+
 
 /* The media queries below will automatically adjust the set width of the
 container class depending on the size of the current browser window. Notice
