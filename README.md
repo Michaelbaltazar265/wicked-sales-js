@@ -1,2 +1,2 @@
 # wicked-sales-js
-A full stack Node.js and React shopping cart app.
+A shopping cart full stack web application that allows a user to view products, view product details, place items in cart, view cart summary, and place an order
