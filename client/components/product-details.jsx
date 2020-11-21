@@ -22,14 +22,14 @@ class ProductDetails extends React.Component {
       const priceProduct = product.price / 100;
       return (
         <div className="container">
-          <div className='col-3'>
+          <div className='col'>
             <div className="click-1 mt-1 pointer" onClick={() => this.props.setView('catalog', {})}> {' < Back to catalog '} </div>
           </div>
           <div className="row product-detail">
             <div className="col-5">
               <img className="my-card-img-top card-img-top" src={product.image} alt="Image of product" />
             </div>
-            <div className="col-3 mt-5 p-2">
+            <div className="col mt-5 p-2">
               <h3>{product.name}</h3>
               <p className="price text-secondary">{`$${priceProduct.toFixed(2)}`}</p>
               <p className="card-text ">{product.shortDescription}</p>
